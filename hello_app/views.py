@@ -29,7 +29,7 @@ def get_tasks():
     # Return the list of tasks as a JSON response
     return jsonify({'tasks': tasks})
 
-# New: Route to get a specific task by ID
+#  Route to get a specific task by ID
 @app.route('/tasks/<int:task_id>', methods=['GET'])
 def get_task(task_id): # Flask passes the task_id from the URL here
     # Find the task with the matching ID
@@ -42,7 +42,7 @@ def get_task(task_id): # Flask passes the task_id from the URL here
     # If the task was found, return the first matching task as JSON
     return jsonify({'task': task[0]})
 
-# New: Route to create a new task
+#  Route to create a new task
 @app.route('/tasks', methods=['POST'])
 def create_task():
     # Check if the request body is JSON and has a 'title' field
@@ -66,7 +66,7 @@ def create_task():
     # Return the newly created task with a 201 Created status code
     return jsonify({'task': task}), 201 # Return the JSON and the status code
 
-# New: Route to update a specific task by ID
+#  Route to update a specific task by ID
 @app.route('/tasks/<int:task_id>', methods=['PUT'])
 def update_task(task_id):
     # Find the task first (same logic as get_task)
@@ -93,7 +93,7 @@ def update_task(task_id):
     # Return the updated task
     return jsonify({'task': task[0]})
 
-# New: Route to delete a specific task by ID
+#Route to delete a specific task by ID
 @app.route('/tasks/<int:task_id>', methods=['DELETE'])
 def delete_task(task_id):
     # Find the task first (same logic as get/put)
