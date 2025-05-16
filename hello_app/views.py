@@ -79,7 +79,6 @@ def update_task(task_id):
         abort(400) # Return 400 if no JSON body
 
     # Update the task fields if they are present in the request JSON
-    # Note: This is a simple update - a real API might handle partial updates differently
     if 'title' in request.json:
         task[0]['title'] = request.json['title']
     if 'description' in request.json:
