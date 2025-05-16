@@ -92,7 +92,7 @@ def update_task(task_id):
     # Return the updated task
     return jsonify({'task': task[0]})
 
-#Route to delete a specific task by ID
+# Route to delete a specific task by ID
 @app.route('/tasks/<int:task_id>', methods=['DELETE'])
 def delete_task(task_id):
     # Find the task first (same logic as get/put)
